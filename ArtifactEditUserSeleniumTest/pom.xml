@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Group ID and Artifact ID (customize for your project) -->
+    <groupId>com.example</groupId>
+    <artifactId>selenium-java23</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- Define the Java version -->
+    <properties>
+        <maven.compiler.source>23</maven.compiler.source>
+        <maven.compiler.target>23</maven.compiler.target>
+    </properties>
+
+    <!-- Define the repositories -->
+    <repositories>
+        <repository>
+            <id>selenium-repo</id>
+            <url>https://selenium-release.storage.googleapis.com/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- Selenium Java dependency (latest stable version at time of writing) -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.26.0</version> <!-- Use the latest stable version -->
+            
+        </dependency>
+
+        <!-- JUnit dependency (for testing) -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+             <groupId>junit</groupId>
+             <artifactId>junit</artifactId>
+             <version>4.13.2</version> <!-- Use the appropriate version -->
+             <!-- <scope>test</scope> -->
+        </dependency>
+
+        <!-- WebDriverManager to manage browser drivers (Optional) -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.3.0</version>
+        </dependency>
+
+        <!-- Logging (Optional, but good practice for debugging) -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.17.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.17.1</version>
+        </dependency>
+        
+        <!-- For Log4j -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.30</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-slf4j-impl</artifactId>
+        <version>2.13.3</version>
+    </dependency>
+
+        
+        
+    </dependencies>
+
+    
+
+  <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.2</version> <!-- Use a version that supports JUnit 5 -->
+            <configuration>
+                <useModulePath>false</useModulePath> <!-- Required for JUnit 5 -->
+            </configuration>
+        </plugin>
+    </plugins>
+ </build>
+
+</project>
